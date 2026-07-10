@@ -1,1 +1,33 @@
-pip install mkdocs-material
+name: Deploy Docs
+on:
+  push:
+    branches:
+      - main # If your default branch is called master, change this to master
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+          
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          key: mkdocs-material-${{ github.sha }}
+          path: .cache
+          
+      - name: Install MkDocs Material & Awesome Pages
+        run: |
+          pip install mkdocs-material
+          pip install mkdocs-awesome-pages-plugin
+        
+      - name: Build and Deploy to gh-pages branch
+        run: mkdocs gh-deploy --force
