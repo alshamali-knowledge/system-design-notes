@@ -43,7 +43,7 @@ Finally, this phase introduces the "Happy Path": the ideal execution flow where 
 
 > 🔑 **Key Takeaway:** Before designing a system, one must first define its purpose through functional requirements and its quality through non-functional requirements, using a shared vocabulary of metrics like the Four Golden Signals and the SLO/Error Budget framework to guide development.
 
-> [](images/1)
+> ![](images/1)
 
 ## Phase 2: The Reality - Hardware Physics, State Mechanics, and Breaking Points
 
@@ -74,7 +74,7 @@ These post-mortems move the discussion from abstract theory to concrete evidence
 
 > 🔑 **Key Takeaway:** Systems break not just because of bugs, but because of the interplay between software logic, hardware limitations, and the sheer complexity of managing state at scale. Real-world outages demonstrate that dependencies, operational procedures, and stateful subsystems are common sources of catastrophic failure.
 
-> [](images/2.png)
+> ![](images/2.png)
 
 ## Phase 3: The Scale - Consistency Models, Distributed Theorems, and Systemic Consequences
 
@@ -111,7 +111,7 @@ The AWS outage is a masterclass in systemic failure. It shows that even a highly
 
 > 🔑 **Key Takeaway:** Scaling a system horizontally introduces the fundamental trade-offs codified by the CAP and PACELC theorems. Real-world outages demonstrate that these are not just academic choices but powerful forces that shape the behavior of entire platforms, with failures in foundational services capable of triggering cascading collapses across multiple dependent systems.
 
-> [technical diagram comparing a monolithic system to a distributed system](images/3.png)
+> ![technical diagram comparing a monolithic system to a distributed system](images/3.png)
 
 ## Phase 4: The Physics - First Principles, SRE Culture, and Failure Analysis
 
@@ -159,7 +159,7 @@ By integrating these deep theoretical principles with proven operational practic
 
 > 🔑 **Key Takeaway:** True system resilience is a synthesis of sound technical design, grounded in unbreakable first principles, and a mature operational culture that embraces failure as a primary source of learning. The blameless post-mortem is the ritual through which this learning occurs.
 
-> [technical diagram illustrating the 'Five Whys' technique](images/4.png)
+> ![technical diagram illustrating the 'Five Whys' technique](images/4.png)
 
 ## Phase 5: Synthesis & Application - Decision-Making and Diagnostic Mental Models
 
@@ -195,4 +195,4 @@ By internalizing these checkpoints, a designer develops a habit of mind that con
 
 > 🔑 **Key Takeaway:** The pinnacle of system design is the ability to synthesize disparate principles into a coherent strategy. This is achieved through structured decision-making tools like a decision matrix and, more importantly, an ingrained set of mental checkpoints that proactively diagnose potential failures related to dependencies, scalability, consistency, and observability.
 
-> [technical diagram illustrating a decision matrix](images/5.png)
+> ![technical diagram illustrating a decision matrix](images/5.png)
