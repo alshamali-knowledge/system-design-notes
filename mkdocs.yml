@@ -26,10 +26,10 @@ theme:
   - search.suggest         # As-you-type search suggestions
   - search.highlight       # Highlight searched terms on the page
 
-  extra:
-    analytics:
-      provider: google
-      property: G-69FMV7V3KQ
+extra:
+  analytics:
+    provider: google
+    property: G-69FMV7V3KQ
 
 markdown_extensions:
   - admonition               # For custom warning/info callout boxes
