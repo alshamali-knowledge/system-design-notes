@@ -1,5 +1,6 @@
 site_name: Alshamali System Design Notes
 site_description: An encyclopedia-style guide on system design and software architecture.
+site_url: https://alshamali-knowledge.github.io/system-design-notes/
 
 theme:
   name: material

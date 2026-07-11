@@ -61,4 +61,20 @@ def on_page_content(html, page, config, files):
         if next_sibling and nav_label.get_text(strip=True) == next_sibling.get_text(strip=True):
             nav_label["aria-hidden"] = "true"
 
+
     return str(new_soup)
+
+
+def on_post_page(output, page, config):
+    """
+    Runs after the full HTML page template (including <head>) is completely rendered.
+    """
+    # Your Google Site Verification Tag
+    verification_tag = '<meta name="google-site-verification" content="sMIWum850pdvHyZ6G67cr-Hm5rMnaisMBWQPhrguobg" />'
+    
+    if '<head>' in output:
+        return output.replace('<head>', f'<head>\n    {verification_tag}', 1)
+    
+    return output
+    
+    return output
