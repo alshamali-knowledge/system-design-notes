@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - main
-      
+
 permissions:
   contents: write
 
@@ -29,6 +29,7 @@ jobs:
         run: |
           pip install mkdocs-material
           pip install mkdocs-awesome-pages-plugin
+          pip install mkdocs-minify-plugin
           pip install beautifulsoup4
         
       - name: Build and Deploy to gh-pages branch

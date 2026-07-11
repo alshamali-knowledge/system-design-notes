@@ -1,0 +1,14 @@
+/* Bumps footer copyright text and links to a compliant high-contrast color */
+.md-footer-meta.md-typeset,
+.md-copyright {
+  color: #959595; /* Yields a safe ~5.4:1 contrast ratio against #171717 */
+}
+
+.md-copyright a {
+  color: #a2c2ff; /* Optional: Ensures links inside the copyright stand out cleanly */
+  text-decoration: underline;
+}
+
+.md-copyright a:hover {
+  color: #ffffff;
+}
