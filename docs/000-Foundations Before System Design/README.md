@@ -3,7 +3,6 @@
 This report outlines a comprehensive pedagogical framework designed to cultivate the foundational knowledge and mental models necessary for effective system design. Grounded in the realities of production engineering, this curriculum progresses learners through distinct knowledge phases, moving from intuitive understanding to deep, first-principles-based reasoning. Each phase is constructed to build upon the last, ensuring a logical and MECE-compliant progression. The framework integrates verified post-mortems and operational practices to anchor abstract concepts in tangible, real-world consequences, thereby transforming theoretical knowledge into practical wisdom. The ultimate objective is to equip learners with the prerequisite understanding that allows them to meaningfully engage with the question, "What is system design?".
 
 ---
----
 
 ## Phase 1: The Foundation - Intuition, Metrics, and the Happy Path
 
