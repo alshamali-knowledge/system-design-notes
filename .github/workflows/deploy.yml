@@ -16,7 +16,8 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: 3.x
+          # Pinning to 3.11 or 3.12 is safer than 3.x, which grabs bleeding-edge versions
+          python-version: '3.12'
           
       - name: Cache dependencies
         uses: actions/cache@v4
@@ -24,10 +25,11 @@ jobs:
           key: mkdocs-material-${{ github.sha }}
           path: .cache
           
-      - name: Install MkDocs Material & Awesome Pages
+      - name: Install MkDocs Material & Dependencies
         run: |
           pip install mkdocs-material
           pip install mkdocs-awesome-pages-plugin
+          pip install beautifulsoup4
         
       - name: Build and Deploy to gh-pages branch
         run: mkdocs gh-deploy --force
