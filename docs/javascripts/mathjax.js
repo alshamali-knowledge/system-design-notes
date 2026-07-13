@@ -1,12 +1,13 @@
 window.MathJax = {
   tex: {
-    inlineMath: [["\\(", "\\)"]],
-    displayMath: [["\\[", "\\]"]],
+    inlineMath: [["\\(", "\\)"], ["$", "$"]], // Added single dollar signs for inline convenient math
+    displayMath: [["\\[", "\\]"], ["$$", "$$"]],
     processEscapes: true,
     processEnvironments: true
   },
   options: {
-    ignoreHtmlClass: ".*",
-    processHtmlClass: "arithmatex"
+    // Allows MathJax to scan all standard body text and raw HTML blocks
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "tex2jax_process|arithmatex"
   }
 };
