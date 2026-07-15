@@ -27,8 +27,6 @@ Every topic in this guide is structured around a unique 5-phase learning framewo
 4. **The Physics:** First-principles grounding in hardware limits (CPU caches, disk IOPS) and mathematical models (Little’s Law, CAP/FLP theorems).
 5. **Synthesis & Application:** Actionable decision matrices and "mental checkpoints" for practical architectural choices.
 
----
-
 <!-- 
   NOTE: Your Python script will automatically append the 
   "## Quick Site Directory" and all topic links below this line 
