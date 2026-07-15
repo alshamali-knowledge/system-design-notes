@@ -55,6 +55,7 @@ extra:
     options:
       ignoreHtmlClass: "tex2jax_ignore"
       processHtmlClass: "tex2jax_process"
+      enableMenu: false
 
   analytics:
     provider: google
@@ -88,6 +89,7 @@ markdown_extensions:
 
 extra_javascript:
   - javascripts/accessibility.js
+  - javascripts/mathjax-instant.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
   #- javascripts/share-buttons.js
 
