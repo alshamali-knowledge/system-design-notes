@@ -29,11 +29,6 @@ Every topic in this guide is structured around a unique 5-phase learning framewo
 
 ---
 
-## 📖 Upcoming: Portable Study Guides
-
-*Note: A condensed, ad-free PDF and Flashcard version of these notes is currently being developed. It is designed for engineers who prefer a portable, highly visual, and structured format for quick interview preparation and on-the-go review. Stay tuned for updates.*
-
----
 <!-- 
   NOTE: Your Python script will automatically append the 
   "## Quick Site Directory" and all topic links below this line 
