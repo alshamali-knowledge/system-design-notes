@@ -1,14 +1,35 @@
-/* Bumps footer copyright text and links to a compliant high-contrast color */
+/* 
+ * Chain of Knowledge: System Design Notes - Custom Styles
+ */
+
+/* 1. Smooth scrolling for anchor links (improves UX when clicking TOC) */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 2. Footer Copyright Styling (High Contrast & Accessible) */
+/* We use the CSS variables you already defined in mkdocs.yml for perfect light/dark mode support */
 .md-footer-meta.md-typeset,
 .md-copyright {
-  color: #959595; /* Yields a safe ~5.4:1 contrast ratio against #171717 */
+  color: var(--md-footer-fg-color, #949494);
 }
 
 .md-copyright a {
-  color: #a2c2ff; /* Optional: Ensures links inside the copyright stand out cleanly */
+  color: var(--md-footer-fg-color--lighter, #a2c2ff);
   text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px; /* Makes the underline cleaner and more modern */
+  transition: color 0.2s ease;
 }
 
 .md-copyright a:hover {
-  color: #ffffff;
+  color: var(--md-accent-fg-color, #ffffff);
+}
+
+/* 3. Optional: Make Admonitions (callout boxes) look cleaner and more professional */
+.md-typeset .admonition,
+.md-typeset details {
+  border-width: 0;
+  border-left-width: 4px; /* Keeps the colored left border but removes the heavy box */
+  border-radius: 4px;
 }

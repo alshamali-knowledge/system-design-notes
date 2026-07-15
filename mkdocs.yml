@@ -9,8 +9,8 @@ edit_uri: edit/main/docs/
 
 theme:
   name: material
-  # logo: assets/logo.svg       # Uncomment when you add a logo
-  # favicon: assets/favicon.png # Uncomment when you add a favicon
+  #logo: assets/logo.png       
+  favicon: assets/logo.png  
   palette:
     # Light mode configuration
     - scheme: default
@@ -41,8 +41,21 @@ theme:
     - search.suggest
     - search.highlight
     - content.code.copy
+    - content.action.edit
+    - content.action.view
 
 extra:
+  mathjax:
+  config:
+    tex:
+      inlineMath: [["\\(", "\\)"], ["$", "$"]]
+      displayMath: [["\\[", "\\]"], ["$$", "$$"]]
+      processEscapes: true
+      processEnvironments: true
+    options:
+      ignoreHtmlClass: "tex2jax_ignore"
+      processHtmlClass: "tex2jax_process"
+
   analytics:
     provider: google
     property: G-69FMV7V3KQ
@@ -74,12 +87,16 @@ markdown_extensions:
   - pymdownx.snippets
 
 extra_javascript:
-  - javascripts/mathjax.js
   - javascripts/accessibility.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  #- javascripts/share-buttons.js
 
 extra_css:
   - stylesheets/extra.css
+  #- stylesheets/share-buttons.css
+
+extra_head: |
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
 
 hooks:
   - hooks.py

@@ -1,4 +1,5 @@
 name: Deploy Docs
+
 on:
   push:
     branches:
@@ -11,26 +12,28 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
       
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          # Pinning to 3.11 or 3.12 is safer than 3.x, which grabs bleeding-edge versions
           python-version: '3.12'
           
-      - name: Cache dependencies
+      - name: Cache pip dependencies
         uses: actions/cache@v4
         with:
-          key: mkdocs-material-${{ github.sha }}
-          path: .cache
+          # FIX: Use a stable key based on OS and Python version, NOT the commit SHA.
+          # Using github.sha means the cache is missed on every single commit, defeating the purpose.
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-mkdocs-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-mkdocs-
           
       - name: Install MkDocs Material & Dependencies
         run: |
-          pip install mkdocs-material
-          pip install mkdocs-awesome-pages-plugin
-          pip install mkdocs-minify-plugin
-          pip install beautifulsoup4
+          python -m pip install --upgrade pip
+          pip install mkdocs-material mkdocs-awesome-pages-plugin mkdocs-minify-plugin beautifulsoup4
         
       - name: Build and Deploy to gh-pages branch
         run: mkdocs gh-deploy --force
