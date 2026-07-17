@@ -77,7 +77,7 @@ def main():
         return
 
     # Build the markdown block
-    markdown_index = "\n\n---\n## Quick Site Directory (For Mobile Indexing)\n\n"
+    markdown_index = "\n\n---\n## Quick Site Directory\n\n"
     for title, path in all_links:
         markdown_index += f"- [{title}]({path})\n"
 

@@ -1,7 +1,7 @@
 # From CAP to Compliance: A Systems Engineer's Decision Framework for Availability vs. Consistency
 
 ---
-> 📊 **Image Generation Prompt:** "Minimalist 2D technical diagram showing a single database node receiving a 'Write' operation and immediately reflecting it to a 'Client' read request. Clean lines, labeled axes with units, monochrome with one accent color (#2563EB blue). White background. Professional engineering reference style."
+![technical diagram showing a single database node receiving a 'Write' operation and immediately reflecting it to a 'Client' read request](images/1.png)
 
 ## PHASE 1: THE FOUNDATION - Motivation, Definitions, and Intuition
 
@@ -154,7 +154,7 @@ Finally, this masterclass concludes with a set of **Mental Checkpoints**—deep,
 
 Answering these questions systematically transforms system design from an art based on precedent to a science grounded in first principles, requirements, and a clear-eyed understanding of the inevitable trade-offs.
 
-> 📊 **Image Generation Prompt:** "Minimalist 2D technical diagram showing a flowchart with four quadrants: 'OLTP (Financial)', 'Analytics (Read-Heavy)', 'Streaming (IoT)', and 'Global Social Media'. Arrows connect each quadrant to a corresponding consistency model label: 'Linearizability', 'Eventual', 'Causal/Eventual', and 'Eventual'. Labels for 'GDPR', 'HIPAA', and 'Global Topology' are shown as external forces influencing the arrows. Monochrome with one accent color (#2563EB blue). White background. Professional engineering reference style."
+![technical diagram showing a flowchart with four quadrants: 'OLTP (Financial)', 'Analytics (Read-Heavy)', 'Streaming (IoT)', and 'Global Social Media'. Arrows connect each quadrant to a corresponding consistency model label: 'Linearizability', 'Eventual', 'Causal/Eventual', and 'Eventual'. Labels for 'GDPR', 'HIPAA', and 'Global Topology' are shown as external forces influencing the arrows](images/2.png)
 
 ---
 

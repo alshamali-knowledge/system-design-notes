@@ -3,8 +3,7 @@
 This masterclass provides a comprehensive and MECE-compliant study of data consistency models in distributed systems. It is structured as a "Chain of Knowledge," progressing from foundational intuition to deep first principles grounded in physics and engineering. The content is organized into five knowledge phases, mapping to Bloom's Taxonomy to provide a clear pedagogical path from basic recall to complex synthesis . Each phase builds logically upon the last, ensuring that prerequisites are established before introducing new concepts. All factual claims are rigorously cited from authoritative sources, including academic literature, foundational texts like Designing Data-Intensive Applications (DDIA), and public post-mortems from leading technology companies . The guide avoids job titles, focusing instead on the progression of knowledge.
 
 ---
-### > 📊 **Image Generation Prompt for Phase 1 Transition: The Happy Path**
-"Minimalist 2D technical diagram showing a single client sending a 'Write' operation to a central server, which then propagates the change to two replicas. An arrow labeled 'Read' from the client returns the newly written value. Clean lines, labeled axes with units, monochrome with one accent color (#2563EB blue). White background. Professional engineering reference style."
+![technical diagram showing a single client sending a 'Write' operation to a central server, which then propagates the change to two replicas. An arrow labeled 'Read' from the client returns the newly written value](images/1.png)
 
 ## Phase 1: The Foundation - Intuitive Analogies and Core Definitions
 
@@ -31,8 +30,7 @@ To ground these analogies in formal terms, let's define the key concepts. A **co
 > 🔑 **Key Takeaway:** Consistency models are essential contracts in distributed systems that define the ordering and visibility of operations on shared data. They range from the strict, predictable behavior of Strong Consistency to the flexible but challenging landscape of Eventual Consistency, with Causal and Sequential models offering important balances in between.
 
 ---
-### > 📊 **Image Generation Prompt for Phase 2 Transition: The Breaking Point**
-"Minimalist 2D technical diagram showing a client sending a 'Write' operation to a server. A network partition line splits the system. The write succeeds on one replica but fails to propagate to the other. A second client sends a 'Read' to a different replica, receiving a stale value. Dashed red arrows indicate the broken communication link. Monochrome with one accent color (#2563EB blue). White background. Professional engineering reference style."
+![technical diagram showing a client sending a 'Write' operation to a server. A network partition line splits the system. The write succeeds on one replica but fails to propagate to the other. A second client sends a 'Read' to a different replica, receiving a stale value. Dashed red arrows indicate the broken communication link.](images/2.png)
 
 ## Phase 2: The Reality - Breaking Points and Standard Patterns
 
@@ -53,8 +51,7 @@ To measure the effectiveness and cost of these approaches, several key metrics a
 > 🔑 **Key Takeaway:** Implementing consistency models involves navigating a complex trade-off space between latency, throughput, availability, and developer complexity. Understanding the breaking points (like network partitions) and the standard patterns (like Paxos or vector clocks) is essential for selecting and correctly using the right model for a given application.
 
 ---
-### > 📊 **Image Generation Prompt for Phase 3 Transition: The Cascading Failure**
-"Minimalist 2D technical diagram showing a chain reaction. A single server failure icon triggers an overload on a neighboring server. That server's failure then causes a cascade, overwhelming the remaining healthy servers in a cluster. Red 'X' icons show failed components. Monochrome with one accent color (#2563EB blue). White background. Professional engineering reference style."
+![technical diagram showing a chain reaction. A single server failure icon triggers an overload on a neighboring server. That server's failure then causes a cascade, overwhelming the remaining healthy servers in a cluster.](images/3.png)
 
 ## Phase 3: The Scale - Systemic Behavior and Real-World Failures
 
@@ -84,8 +81,7 @@ Netflix's response to the 2012 AWS EBS outage provides a blueprint for resilienc
 > 🔑 **Key Takeaway:** At scale, consistency is a systemic property influenced by network physics, automation complexity, and cascading failure dynamics. Real-world failures demonstrate that the choice of consistency model is intertwined with the overall system architecture, and resilience often requires designing for failure rather than just preventing it.
 
 ---
-### > 📊 **Image Generation Prompt for Phase 4 Transition: The Physics of Time**
-"Minimalist 2D technical diagram showing a timeline. On the left, a magnified view of a distributed system with nodes sending signals (lightning bolt icons) between them, labeled 'Speed of Light'. On the right, a simplified clock icon with a label 'Clock Drift' and an uncertainty band. Monochrome with one accent color (#2563EB blue). White background. Professional engineering reference style."
+![technical diagram showing a timeline. On the left, a magnified view of a distributed system with nodes sending signals (lightning bolt icons) between them, labeled 'Speed of Light'. On the right, a simplified clock icon with a label 'Clock Drift' and an uncertainty band.](images/4.png)
 
 ## Phase 4: The Physics - First Principles Grounding in Hardware and Network Constraints
 
