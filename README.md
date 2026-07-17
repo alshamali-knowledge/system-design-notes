@@ -9,7 +9,7 @@ Welcome to a production-grounded, encyclopedia-style guide to system design and 
 Rather than memorizing standard high-level templates, this curriculum traces architectural trade-offs down to hardware physics, state mechanics, and verified production post-mortems. It is designed for software engineers and architects who want to understand the *why* and *how* behind resilient, scalable systems.
 
 > 📝 **Note on Research & Curation:**  
-> This resource is built using AI-assisted research for rapid technical synthesis, combined with rigorous human curation. Every concept, trade-off, and decision matrix is reviewed and verified by a software engineer to ensure production-grade accuracy and practical relevance.
+> This resource is built using AI-assisted research for rapid technical synthesis, combined with rigorous human curation.
 > 
 > 🎨 **Visuals in Progress:** High-quality architecture diagrams are being actively generated and integrated into the topics to enhance visual learning.
 
