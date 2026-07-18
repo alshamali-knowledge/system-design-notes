@@ -58,3 +58,29 @@ def on_post_page(output, page, config):
         return output.replace('<head>', f'<head>\n    {verification_tag}', 1)
     
     return output
+
+
+def on_page_markdown(markdown, page, config, files):
+    """
+    Injects the Gumroad Audiobook Promo ONLY on the Topic 0 (Foundations) page.
+    """
+    # Check if the current page is the Foundations chapter
+    # This safely matches the folder name regardless of whether it's README.md or index.md
+    if '000-Foundations' in page.file.src_path:
+        
+        gumroad_url = "https://mamoonalshamali.gumroad.com/l/foundations-system-design-audio"
+        
+        # We use native MkDocs Admonition (!!! info) and Button ({: .md-button }) syntax
+        promo_block = f"""
+!!! info "🎧 Listen to this Chapter for Free"
+    Prefer learning on the go? Download the high-fidelity audiobook version of **Topic 0** to listen during your commute or workout.
+    
+    [Download Free Audiobook 🎧]({gumroad_url}){{: .md-button .md-button--primary }}
+    
+
+"""
+        # Prepend the promo block to the very top of the page's markdown
+        return promo_block + markdown
+        
+    # For all other pages, return the markdown untouched
+    return markdown

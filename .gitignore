@@ -3,6 +3,8 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
+/docs/assets/audio
+generate_audio.py
 
 # Operating system files
 .DS_Store
