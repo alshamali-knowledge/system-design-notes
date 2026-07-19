@@ -2,9 +2,7 @@
 
 This report presents a definitive study guide on the availability patterns of Master-Master and Master-Slave replication. It is structured according to a "Chain of Knowledge" progression, moving from foundational concepts to deep, first-principles physics. The scope is deliberately focused on these two replication topologies, excluding explicit discussions of active-active and active-passive failover models as primary subjects, though their distinctions are clarified where necessary for pedagogical completeness. The content is designed to be MECE (Mutually Exclusive, Collectively Exhaustive) within its defined boundaries, providing a rigorous framework for engineers to understand, select, and implement these critical patterns in distributed systems.
 
-> 💥 **Image Generation Prompt for Phase 1 Transition: The Happy Path**
->
-> "Minimalist 2D technical diagram showing a central 'Master' node broadcasting a timeline of events ('Events') to multiple 'Slave' nodes. An arrow labeled 'Replication Stream' connects the Master's log to each Slave's log. Clean lines, labeled axes with units, monochrome with one accent color (#2563EB blue). White background. Professional engineering reference style."
+![technical diagram showing a central 'Master' node broadcasting a timeline of events ('Events') to multiple 'Slave' nodes. An arrow labeled 'Replication Stream' connects the Master's log to each Slave's log](images/1.png)
 
 ---
 

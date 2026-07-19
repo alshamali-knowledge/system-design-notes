@@ -3,8 +3,8 @@
 This masterclass provides a comprehensive, mutually exclusive, and collectively exhaustive (MECE) study guide on event-driven background jobs. It progresses through a strict "Chain of Knowledge," starting from foundational intuitions and scaling up to deep, first-principles physics grounding. The guide addresses all major implementation paradigms, integrates both latency- and throughput-bound hardware constraints, and incorporates canonical failure analysis and rigorous quantitative models. This structure ensures accessibility for beginners while providing the depth required by staff-level engineers.
 
 ---
-### Image Generation Prompt for Phase 1 Transition
-"Minimalist 2D technical diagram showing a single 'Web Server' box producing a 'Job' arrow into a circular 'Message Queue'. An arrow from the queue leads to a single 'Worker Process' box which consumes the Job. Clean lines, labeled axes with units, monochrome with one accent color (#2563EB blue). White background. Professional engineering reference style."
+
+![technical diagram showing a single 'Web Server' box producing a 'Job' arrow into a circular 'Message Queue'. An arrow from the queue leads to a single 'Worker Process' box which consumes the Job.](images/1.png)
 
 ## Phase 1: The Foundation - Intuition and Core Concepts
 
@@ -32,8 +32,8 @@ In this scenario, the system is highly responsive because the producer is never 
 > 🔑 **Key Takeaway:** Event-driven background jobs are a design pattern for improving system responsiveness and scalability by decoupling task producers from their consumers, enabling asynchronous execution of non-critical operations.
 
 ---
-### Image Generation Prompt for Phase 2 Transition
-"Minimalist 2D diagram showing a 'Producer' box sending a 'Job' arrow into a 'Message Queue'. An arrow from the queue leads to a 'Worker Process' box. The Worker Process has a red 'X' indicating a failure. An arrow labeled 'Retry Attempt' loops back towards the Producer, illustrating a cascading effect. Monochrome with #2563EB blue for primary flows and red for the retry loop."
+
+![diagram showing a 'Producer' box sending a 'Job' arrow into a 'Message Queue'. An arrow from the queue leads to a 'Worker Process' box. The Worker Process has a red 'X' indicating a failure. An arrow labeled 'Retry Attempt' loops back towards the Producer, illustrating a cascading effect.](images/2.png)
 
 ## Phase 2: The Reality - Mechanics and Intermediate Patterns
 
@@ -58,8 +58,8 @@ A common anti-pattern that violates the principles of reliability is **Acknowled
 > 🔑 **Key Takeaway:** Real-world event-driven systems require sophisticated patterns like Dead-Letter Queues and idempotent processing to handle failures and backpressure, and their health must be carefully monitored using specific metrics like latency, throughput, and consumer lag.
 
 ---
-### Image Generation Prompt for Phase 3 Transition
-"Minimalist 2D diagram showing multiple 'Producer' boxes and multiple 'Consumer' boxes connected via a central 'Distributed Message Broker' (e.g., Kafka cluster). Arrows show data flowing in both directions. One Consumer box is highlighted with a red 'X', with arrows indicating retry attempts propagating back towards the Producers, creating a feedback loop. Monochrome with #2563EB blue for primary flows, red for the retry loop, and a dashed circle around the feedback loop to denote a systemic issue."
+
+![diagram showing multiple 'Producer' boxes and multiple 'Consumer' boxes connected via a central 'Distributed Message Broker' (e.g., Kafka cluster). Arrows show data flowing in both directions. One Consumer box is highlighted with a red 'X', with arrows indicating retry attempts propagating back towards the Producers, creating a feedback loop.](images/3.png)
 
 ## Phase 3: The Scale - Systemic Behavior and Distributed Context
 
@@ -79,8 +79,8 @@ Another prominent example is the series of Kafka outages experienced by PagerDut
 > 🔑 **Key Takeaway:** At scale, event-driven systems exhibit emergent behaviors governed by the interplay between producers, consumers, and brokers. Choosing the wrong paradigm or ignoring systemic issues like cascading failures can lead to catastrophic outages, as demonstrated by the Stripe latency incident.
 
 ---
-### Image Generation Prompt for Phase 4 Transition
-"Diagram illustrating the CPU cache hierarchy: A central CPU Core with adjacent L1 and L2 caches. L3 cache is shared among cores, and all are connected to Main Memory (DRAM). Highlight a scenario where two cores are modifying variables on the same cache line, triggering invalidation traffic between L1/L2 and L3. A separate panel shows a network path between two data centers, with a label indicating 'Propagation Delay' and a value like '5 µs/km'."
+
+![Diagram illustrating the CPU cache hierarchy: A central CPU Core with adjacent L1 and L2 caches. L3 cache is shared among cores, and all are connected to Main Memory (DRAM). Highlight a scenario where two cores are modifying variables on the same cache line, triggering invalidation traffic between L1/L2 and L3. A separate panel shows a network path between two data centers, with a label indicating 'Propagation Delay' and a value like '5 µs/km'.](images/4.png)
 
 ## Phase 4: The Physics - First Principles Grounding and Mathematical Foundations
 
@@ -109,8 +109,8 @@ It is important to note that while the principles of queuing theory are [CONSENS
 > 🔑 **Key Takeaway:** The performance and behavior of event-driven systems are ultimately constrained by the immutable laws of physics (speed of light) and the architecture of computer hardware (cache hierarchy). Queuing theory provides the mathematical language to quantify system behavior under load.
 
 ---
-### Image Generation Prompt for Phase 5 Transition
-"Decision tree diagram. The root node asks 'Primary Constraint?'. Two branches lead to 'LATENCY' and 'THROUGHPUT'. Under 'LATENCY', a sub-question asks 'Do I need replayability?'. A 'No' branch leads to 'Message Queue (e.g., RabbitMQ)'. A 'Yes' branch leads to 'Event Stream (e.g., Kafka)'. Under 'THROUGHPUT', a branch leads to 'Broadcast to many?' with 'No' leading to 'Task Queue (e.g., SQS FIFO)' and 'Yes' leading to 'Pub/Sub (e.g., Pub/Sub)'."
+
+![Decision tree diagram. The root node asks 'Primary Constraint?'. Two branches lead to 'LATENCY' and 'THROUGHPUT'. Under 'LATENCY', a sub-question asks 'Do I need replayability?'. A 'No' branch leads to 'Message Queue (e.g., RabbitMQ)'. A 'Yes' branch leads to 'Event Stream (e.g., Kafka)'. Under 'THROUGHPUT', a branch leads to 'Broadcast to many?' with 'No' leading to 'Task Queue (e.g., SQS FIFO)' and 'Yes' leading to 'Pub/Sub (e.g., Pub/Sub)'.](images/5.png)
 
 ## Phase 5: Synthesis & Application - Decision Framework and Design Checkpoints
 

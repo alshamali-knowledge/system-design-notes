@@ -12,7 +12,7 @@ This leads us to the core definitions. A **Background Job** is a discrete unit o
 
 In the simplest case, under low load and with no failures, the "happy path" of a schedule-driven background job is straightforward. The job scheduler, running continuously, evaluates its set of scheduled tasks against the current system time at regular intervals. When the current time matches the schedule for a particular job, the scheduler instructs the system to launch a new worker process or container to execute the job . This worker acquires any necessary resources, executes the job's code, and upon completion, reports its status back to the scheduler (e.g., "success" or "failure"). The scheduler then cleans up the completed worker process. For a simple cron job running on a single server, this entire cycle happens predictably and reliably. For instance, a job configured to run every Sunday morning at 3:00 AM successfully executes, completes its small dataset processing task within seconds, and exits cleanly, ready to be triggered again the following week . In this ideal scenario, there are no resource contention issues, no network partitions, and no unexpected errors. The system behaves deterministically, fulfilling its purpose with minimal fuss. This happy path represents the baseline expectation, but real-world systems quickly introduce variables that challenge this simplicity.
 
-> 📊 **Image Generation Prompt:** "Minimalist 2D technical diagram showing a Main Application Thread sending a 'Task Ticket' to a Job Queue. A single Worker Process retrieves the ticket, executes the task, and sends a 'Success' signal back. Clean lines, labeled axes with units, monochrome with one accent color (#2563EB blue). White background. Professional engineering reference style."
+![technical diagram showing a Main Application Thread sending a 'Task Ticket' to a Job Queue. A single Worker Process retrieves the ticket, executes the task, and sends a 'Success' signal back.](images/1.png)
 
 ---
 
@@ -44,7 +44,7 @@ For Kubernetes CronJobs specifically, additional metrics are crucial, such as tr
 > Description: Seeing an increasing queue backlog and automatically assuming the solution is to spin up more workers.
 > Consequence: This can fail if worker startup time is slower than the job arrival rate, exacerbating resource contention and potentially causing a cascading failure .
 
-> 📊 **Image Generation Prompt:** "Minimalist 2D technical diagram showing a Job Queue with a rising 'Backlog' bar. Workers are shown struggling to keep up, with one worker processing a job slowly. An alarm icon is next to the backlog bar. Clean lines, labeled axes with units, monochrome with one accent color (#2563EB blue). White background. Professional engineering reference style."
+![technical diagram showing a Job Queue with a rising 'Backlog' bar. Workers are shown struggling to keep up, with one worker processing a job slowly. An alarm icon is next to the backlog bar.](images/2.png)
 
 ---
 
@@ -65,7 +65,7 @@ When engineers attempt to scale simple job schedulers, they often fall into seve
 > 💥 **Post-Mortem: Cloudflare Outage (November 18, 2025)**
 > On November 18, 2025, Cloudflare suffered a global service outage affecting millions of users and bringing down approximately 20% of the internet for six hours. The incident was triggered by a bug in the generation logic for a Bot Management feature. A recent permissions change caused a database query to unexpectedly return duplicate data rows. This corrupted output was used to generate a configuration file for Cloudflare's edge proxy servers. Because the generated file exceeded an internal size limit, the proxies began to crash repeatedly upon loading it, creating a self-perpetuating failure loop. The architectural takeaway is the critical importance of managing complex, stateful processes with durable execution engines that provide better isolation, testing, and rollback capabilities than ad-hoc cron jobs. The incident underscores how a small data integrity flaw in a background process can cascade into a massive outage, highlighting the need for robustness and observability in all parts of the system .
 
-> 📊 **Image Generation Prompt:** "Minimalist 2D technical diagram showing multiple nodes in a cluster with diverging clock ticks. A central NTP server is shown trying to synchronize them, but gaps persist. A 'Missed Run' flag appears on one node, and a 'Race Condition' warning appears where two jobs overlap. Clean lines, labeled axes with units, monochrome with one accent color (#2563EB blue). White background. Professional engineering reference style."
+![technical diagram showing multiple nodes in a cluster with diverging clock ticks. A central NTP server is shown trying to synchronize them, but gaps persist. A 'Missed Run' flag appears on one node, and a 'Race Condition' warning appears where two jobs overlap.](images/3.png)
 
 ---
 
@@ -135,7 +135,7 @@ To ensure a robust design, every engineer should ask themselves a series of deep
 
 By systematically working through this checklist, an engineer can move beyond a simplistic implementation and design a system that is truly fit for production. The journey from a simple kitchen timer to a cosmic clock synchronized by atomic standards reflects the progression of understanding required to build reliable distributed systems. It starts with the basic need to offload work and culminates in a deep appreciation for the physical and mathematical laws that govern our digital world. The mastery of schedule-driven background jobs lies not in choosing a single "best" tool, but in understanding the trade-offs and applying the right combination of patterns, principles, and technologies to match the unique demands of the problem at hand.
 
-> 📊 **Image Generation Prompt:** "Minimalist 2D decision tree diagram. The root node asks 'What is the workload criticality?' Two branches: 'Low Criticality' leads to 'Simple Cron'. 'High Criticality' leads to another node: 'Is it a Stateful Workflow?'. This has two branches: 'Yes' leads to 'Temporal', and 'No' leads to 'Kubernetes CronJob'. Clean lines, labeled axes with units, monochrome with one accent color (#2563EB blue). White background. Professional engineering reference style."
+![decision tree diagram. The root node asks 'What is the workload criticality?' Two branches: 'Low Criticality' leads to 'Simple Cron'. 'High Criticality' leads to another node: 'Is it a Stateful Workflow?'. This has two branches: 'Yes' leads to 'Temporal', and 'No' leads to 'Kubernetes CronJob'.](images/4.png)
 
 ---
 
