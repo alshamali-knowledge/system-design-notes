@@ -1,0 +1,48 @@
+/* 
+ * Chain of Knowledge: System Design Notes - Custom Styles
+ */
+
+/* 1. Smooth scrolling for anchor links (improves UX when clicking TOC) */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 2. Footer Copyright Styling (High Contrast & Accessible) */
+/* We use the CSS variables you already defined in mkdocs.yml for perfect light/dark mode support */
+.md-footer-meta.md-typeset,
+.md-copyright {
+  color: var(--md-footer-fg-color, #949494);
+}
+
+.md-copyright a {
+  color: var(--md-footer-fg-color--lighter, #a2c2ff);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px; /* Makes the underline cleaner and more modern */
+  transition: color 0.2s ease;
+}
+
+.md-copyright a:hover {
+  color: var(--md-accent-fg-color, #ffffff);
+}
+
+/* 3. Optional: Make Admonitions (callout boxes) look cleaner and more professional */
+.md-typeset .admonition,
+.md-typeset details {
+  border-width: 0;
+  border-left-width: 4px; /* Keeps the colored left border but removes the heavy box */
+  border-radius: 4px;
+}
+
+/* Constrain MathJax menu to prevent mobile viewport boundary miscalculations */
+mjx-menu {
+  max-width: 90vw !important;
+  max-height: 80vh !important;
+  overflow: auto !important;
+}
+
+/* Ensure display math has stable spacing during instant nav */
+mjx-container[jax="CHTML"][display="true"] {
+  margin: 1em 0;
+  min-height: 1.5em;
+}
